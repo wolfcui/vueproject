@@ -6,7 +6,8 @@
         <li>
           <button @click='send'>发送Ajax请求</button>
         </li>
-        <li>{{user.name}}</li>
+
+        <li v-for="u in user">{{u.name}}</li>
         <li>我的个人中心</li>
       </ul>
     </div>
@@ -32,7 +33,6 @@ export default {
       this.$http.get(url).then((response)=>{
         console.log(response);
         this.user=response.data;
-        alert(response.data.name)
       })
     }
   }
