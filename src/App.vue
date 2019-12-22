@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <HelloWorld/>
+    <router-link to="/first">to first</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -11,7 +12,7 @@ export default {
   name: 'App',
   components: {
     HelloWorld
-  }
+  },
 }
 </script>
 
