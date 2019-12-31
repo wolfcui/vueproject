@@ -1,14 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 
-import First from '../components/First';
-import HelloWorld from "../components/HelloWorld";
+import Register from '../components/Register';
 
 
 const routes = [
 
-  { path: '/', component: HelloWorld },
-  { path: '/first', component: First }
+  { path: '/register',name:'register', component: Register }
 
 ]
 
