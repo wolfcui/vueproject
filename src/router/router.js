@@ -1,17 +1,24 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router';
+import Router from 'vue-router';
+import '@/assets/css/reset.css'
+import '@/assets/css/header.css'
+import Shop from '@/views/shop'
+Vue.use(Router)
 
-import Register from '../components/Register';
-
-
-const routes = [
-
-  { path: '/register',name:'register', component: Register }
-
-]
-
-Vue.use(VueRouter);
-
-const router = new VueRouter({ mode: 'history', routes: routes });
-
-export default router;
+export default new Router({
+  mode: 'history',
+  scrollBehavior (to, from, savePosition) {
+    if (savePosition) {
+      return savePosition
+    } else {
+      return {x: 0, y: 0}
+    }
+  },
+  routes:[
+    {
+      path:'/',
+      name:Shop,
+      component: Shop
+    }
+  ]
+})
